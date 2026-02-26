@@ -1,0 +1,521 @@
+html {
+  scroll-behavior: smooth;
+}
+:root {
+    --primary-color: #28a745;
+    --secondary-color: #007bff;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --navbar-height: 60px;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    margin: 0; 
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    padding-top: var(--navbar-height);
+  padding: 0;
+  padding-top: 93px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    height: 93px;
+    padding: 0 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    
+}
+.navbar .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: -6px;
+    margin-left: 35px;
+}
+
+@keyframes pulseSwachh {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 5px rgba(115, 226, 196, 0.4);
+  }
+  50% {
+    transform: scale(1.1); /* Increases size */
+    text-shadow: 0 0 15px rgba(150, 227, 235, 0.8), 0 0 25px rgba(255, 255, 255, 0.6); /* Brighter shine */
+  }
+  100% {
+    transform: scale(1); /* Decreases size back to original */
+    text-shadow: 0 0 5px rgba(163, 241, 244, 0.4);
+  }
+}
+.navbar .logo-part-1 {
+    color: var(--primary-color) !important;
+    /* Apply the animation */
+    animation: pulseSwachh 2s infinite alternate ease-in-out;
+    /* Ensure transform is applied from the center */
+    display: inline-block;
+    transform-origin: center center;
+}
+
+.navbar .logo-part-2 {
+    color: var(--secondary-color) !important;
+    /* Add a subtle text shadow for a general shine effect */
+    text-shadow: 0 0 5px rgba(156, 244, 206, 0.4);
+}
+.navbar a{
+font-family: sans-serif;
+font-size:large;
+font-weight: bolder;
+}
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+.navbar .nav-links a:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+.navbar .auth-buttons a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-left: 10px;
+     position: relative;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.navbar .auth-buttons .signup {
+    background-color: var(--primary-color);
+}
+
+.navbar .auth-buttons .signin {
+    background-color: var(--secondary-color);
+}
+.hero {
+  position: relative; 
+  overflow: hidden; 
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('src/assets/original-79ae512fddef5f5c6352103e2b02f2b2.webp') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+  font-size: large;
+  height: 518px;
+  box-shadow: none;
+  padding-top: 95px;
+  margin-top: -88px;
+  margin-left: -120px;
+  margin-right: -120px;
+}
+.shimmer-particle {
+  position: fixed;
+  pointer-events: none; /* Allows mouse clicks to pass through */
+  width: 10px;
+  height: 10px;
+  background-color: rgba(68, 209, 76, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(125, 232, 155, 0.6), 0 0 20px rgba(255, 255, 255, 0.4);
+  animation: fadeOutAndShrink 1s forwards;
+}
+@keyframes fadeOutAndShrink {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+.hero h1{
+ font-family: sans-serif;
+ font-size:45px;
+ font-weight: bold;
+ margin-top:1rem;
+}
+.hero p{
+font-family: sans-serif;
+font-size: 20px;
+}
+.section {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    height:570px;
+    margin-left: -7px;
+    margin-right:-7px;
+  background-color: rgb(225, 237, 233);
+
+}
+.section-heading {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-family: sans-serif;
+    font-size:42px;
+    margin-left: -2px;
+    margin-right: -22px;
+}
+.section p{
+font-family:sans-serif;
+font-size:19px;
+padding-right: 1rem;
+}
+/* =========================
+   HOW SECTION (MAIN WRAPPER)
+   ========================= */
+
+.howsec {
+  min-height: 200vh;                 /* Enables scroll */
+  padding: 6rem 1rem;
+  background: #f9fafb;
+}
+
+.howsec h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  color: #111827;
+}
+
+/* =========================
+   CARD STACK CONTAINER
+   ========================= */
+
+.how-it-works {
+  position: relative;
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   STACKING CARD STYLE
+   ========================= */
+
+.step {
+  position: sticky;
+  background: white;
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08),
+    0 30px 60px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
+}
+
+/* =========================
+   CARD CONTENT
+   ========================= */
+
+.step-icon {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.step h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.step p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* =========================
+   DEPTH EFFECT (OPTIONAL)
+   ========================= */
+
+.step:not(:first-child) {
+  filter: brightness(0.98);
+}
+
+/* =========================
+   RESPONSIVE (MOBILE SAFE)
+   ========================= */
+
+@media (max-width: 640px) {
+  .howsec {
+    padding: 4rem 1rem;
+  }
+
+  .step {
+    padding: 2rem 1.5rem;
+  }
+
+  .howsec h1 {
+    font-size: 2rem;
+  }
+}
+
+.seciss{
+ padding: 2rem;
+    margin-bottom: 2rem;
+    height:670px;
+    margin-left: -120px;
+    margin-right:-120px;
+     background-color: rgb(225, 237, 233);
+     /* background-image: url('src/assets/swachbh.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+
+}
+.issues-container {
+    position: relative;
+    width: 400px; 
+    height: 350px; 
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -44px;
+}
+.issue-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 1rem;
+    background-color: rgb(208, 236, 246);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.95);
+}
+.issue-card h2{
+font-family:sans-serif;
+margin-top:-522px;
+}
+.issue-card.active {
+    opacity: 1;
+    transform: scale(1);
+}
+.issue-card img {
+    width: 100%;
+    height: 150px;
+    object-fit:none;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+.issue-card h2 {
+    color: rgb(16, 115, 23);
+    margin-bottom: 0.5rem;
+    margin-top:0.5rem;
+    font-size:30px;
+    font-family: sans-serif;
+}
+.issue-card p{
+font-size:22px;
+font-family: sans-serif;
+}
+.call-to-action {
+    background-color: transparent; 
+    box-shadow: none; 
+    margin-top: 2rem; 
+    text-align: center;
+    padding: 0;
+}
+.call-to-action h2 {
+    color: white;
+    font-family: sans-serif;
+}
+.call-to-action p {
+    color: white; 
+    font-family: sans-serif;
+}
+.call-to-action {
+    text-align: center;
+    margin-top: 10rem;
+}
+.cta-button {
+    background-color: rgb(123, 217, 243);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: inline-block; 
+    transition: all 0.3s ease-in-out; 
+    border: none; 
+    cursor: pointer; 
+}
+.cta-button:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 0 20px rgba(154, 249, 176, 0.8), 
+                0 0 30px rgba(137, 247, 163, 0.6); 
+    background-color: rgb(141, 217, 250); }
+.footer {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  text-align: center;
+  margin: 0;                
+  padding: 30px 20px;        
+  box-sizing: border-box;    
+margin-top:-33px;  
+  margin-left: -120px;
+  margin-right: -120px;
+  margin-bottom: -32px;
+}
+.footer .container {
+  width: 100%;               
+  max-width: 100%;           
+                 
+  padding: 0;
+  margin-top:90px;     
+   margin-left: -120px;
+  margin-right: -120px;    
+margin-bottom: -9px;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 99px;
+}
+.footer-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: sans-serif;
+}
+.footer-section p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+font-family: sans-serif;
+}
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+.whatsapp-float a {
+    display: flex;
+    align-items: center;
+    background-color: #25D366;
+    color: white;
+    padding: 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.mla-table-section {
+  padding: 2rem;
+  margin: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.mla-table-section h2 {
+  text-align: center;
+  color: #28a745;
+  margin-bottom: 1rem;
+}
+.table-container-div {
+  overflow-x: auto;
+}
+.issues-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.issues-data-table th, .issues-data-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+.issues-data-table thead {
+  background-color: #f2f2f2;
+}
+.issues-data-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.issue-image-cell {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.status-toggle-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.unsolved-status {
+  background-color: #dc3545;
+}
+.solved-status {
+  background-color: #28a745;
+}
+.issue-filter-select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.filter-controls {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+.filter-controls label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* MLA Contact Section */
+.mla-contact-section {
+  padding: 2rem;
+  background-color: white;
+  margin: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.mla-contact-section h2 {
+  color: #28a745;
+  margin-bottom: 1rem;
+}
+.mla-contact-section a {
+  color: #007bff;
+  text-decoration: none;
+}
+.mla-contact-section a:hover {
+  text-decoration: underline;
+}
