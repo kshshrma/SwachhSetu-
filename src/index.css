@@ -22,7 +22,6 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;

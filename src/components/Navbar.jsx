@@ -1,32 +1,35 @@
-import { useState } from "react";
+import React from 'react';
 
-export default function Navbar() {
-  const [open, setOpen] = useState(false);
+const Navbar = () => {
+  const handleSignUpClick = (e) => {
+    e.preventDefault();
+    alert('Redirecting to Sign Up page...');
+  };
+
+  const handleSignInClick = (e) => {
+    e.preventDefault();
+    alert('Redirecting to Sign In page...');
+  };
 
   return (
-    <>
-      <div className="navbar">
-        <div className="logo">
-          Bharat<span>Verse</span>
-        </div>
-
-        <div
-          className="hamburger"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? "✖" : "☰"}
-        </div>
+    <nav className="navbar">
+      <a href="/#home" className="logo">
+        <span className="logo-part-1">Swachh</span>
+        <span className="logo-part-2">Setu</span>
+      </a>
+      <div className="nav-links">
+        <a href="/#home">Hero</a>
+        <a href="/#about">About Us</a>
+        <a href="/#procedure">Procedure</a>
+        <a href="/#ranking">Issues</a>
+        <a href="/#contact">Contact</a>
       </div>
-
-      <div className={`mobile-menu ${open ? "active" : ""}`}>
-        <p onClick={() => setOpen(false)}>Hero</p>
-        <p onClick={() => setOpen(false)}>About Us</p>
-        <p onClick={() => setOpen(false)}>Procedure</p>
-        <p onClick={() => setOpen(false)}>Issues</p>
-        <p onClick={() => setOpen(false)}>Contact</p>
-        <p onClick={() => setOpen(false)}>Sign Up</p>
-        <p onClick={() => setOpen(false)}>Sign In</p>
+      <div className="auth-buttons">
+        <a href="#" className="signup" onClick={handleSignUpClick}>Sign Up</a>
+        <a href="#" className="signin" onClick={handleSignInClick}>Sign In</a>
       </div>
-    </>
+    </nav>
   );
-}
+};
+
+export default Navbar;
